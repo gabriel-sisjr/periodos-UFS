@@ -1,0 +1,42 @@
+﻿@model Model.ViewModel.MotoristaUsuarioViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MotoristaModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Motorista.Categoria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Motorista.Categoria)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Motorista.Validade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Motorista.Validade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Motorista.Cnh)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Motorista.Cnh)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="@Url.Action("Edit", "Motorista", new { id = Model.Motorista.Id })" class="btn btn-info"><i class="fa fa-pencil"></i> Editar </a>
+    <a class="btn btn-default" asp-action="Index">Voltar</a>
+</div>

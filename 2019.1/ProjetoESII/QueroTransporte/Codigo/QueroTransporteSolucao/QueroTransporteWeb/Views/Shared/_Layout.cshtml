@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="~/images/queroTransporteLogo.png" type="image/ico" />
+    <title>@ViewData["Title"] - QueroTransporteWeb</title>
+
+
+    <link rel="stylesheet" type="text/css" href="~/css/estiloComprarCreditos.css">
+    <!-- Bootstrap -->
+    <link href="~/template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/template/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/template/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="~/template/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="~/template/build/css/custom.min.css" rel="stylesheet">
+</head>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <body class="login">
+        @RenderBody()
+        @RenderSection("Scripts", required: false)
+    </body>
+}
+else
+{
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <partial name="_MenuPartial" />
+                <partial name="_TopBarPartial" />
+                <div class="right_col" role="main">
+                    <div class="row">
+                        <div class="x_panel">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="pull-right">
+                    Quero Transporte 2019
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+        </div>
+
+
+        <!-- jQuery -->
+        <script src="~/template/vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/template/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="~/template/vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="~/template/vendors/nprogress/nprogress.js"></script>
+        <!-- iCheck -->
+        <script src="~/template/vendors/iCheck/icheck.min.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <script src="~/template/build/js/custom.min.js"></script>
+
+        @RenderSection("Scripts", required: false)
+    </body>
+}
+</html>

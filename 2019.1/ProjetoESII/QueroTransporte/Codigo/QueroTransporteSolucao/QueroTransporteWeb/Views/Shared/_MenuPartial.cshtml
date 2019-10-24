@@ -1,0 +1,100 @@
+﻿@using System.Security.Claims;
+
+@{
+    ViewData["Title"] = "_MenuPartial";
+
+    var claimsIdentity = User.Identity as ClaimsIdentity;
+    string nome = "";
+    string role = "";
+
+    if (claimsIdentity != null)
+    {
+        nome = claimsIdentity.Claims.Where(s => s.Type == ClaimTypes.NameIdentifier).Select(s => s.Value).FirstOrDefault();
+        role = claimsIdentity.Claims.Where(s => s.Type == ClaimTypes.Role).Select(s => s.Value).FirstOrDefault();
+    }
+}
+
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+            <a asp-controller="Home" asp-action="Index" class="site_title"><i class="fa fa-car"></i> <span>Quero Transporte</span></a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+            <div class="profile_pic">
+                <img src="https://instagram.faju8-1.fna.fbcdn.net/vp/bd2fab5b7961c32747d7ac0ebee2823d/5DD6066A/t51.2885-15/e35/64268963_620399681782719_5372864629773112534_n.jpg?_nc_ht=instagram.faju8-1.fna.fbcdn.net" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+                <span>Bem Vindo,</span>
+                <h2>@nome</h2>
+            </div>
+        </div>
+        <!-- /menu profile quick info -->
+        <br>
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                    <li>
+                        <a asp-controller="Home" asp-action="Index"><i class="fa fa-bar-chart"></i> Dashboard </a>
+                    </li>
+                    @if (User.IsInRole("MOTORISTA"))
+                    {
+
+                    }
+                    else if (User.IsInRole("ADMIN"))
+                    {
+                        <li>
+                            <a asp-controller="Frota" asp-action="Index"><i class="fa fa-car"></i> Frotas </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Rota" asp-action="Index"><i class="fa fa-road"></i> Rotas </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Viagem" asp-action="Index"><i class="fa fa-road"></i> Viagem </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Veiculo" asp-action="Index"><i class="fa fa-car"></i> Veiculos </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Usuario" asp-action="Index"><i class="fa fa-user"></i> Usuarios </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Motorista" asp-action="Index"><i class="fa fa-edit"></i> Motoristas </a>
+                        </li>
+                        <li>
+                            <a asp-controller="ConsumivelVeicular" asp-action="Index"><i class="fa fa-edit"></i> Consumíveis Veículares </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Historico" asp-action="HistoricoTransacoes"><i class="fa fa-history"></i> Gráfico de Transacoes </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Historico" asp-action="HistoricoViagens"><i class="fa fa-history"></i> Gráfico de Viagens </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Historico" asp-action="HistoricoSolicitacoes"><i class="fa fa-history"></i> Gráfico de Solicitações </a>
+                        </li>
+                        <li>
+                            <a asp-controller="ConsumivelVeicular" asp-action="Reports"><i class="fa fa-history"></i> Gráfico de Consumiveis </a>
+                        </li>
+                    }
+                    <li>
+                        <a asp-controller="ComprarCreditos" asp-action="Index"><i class="fa fa-shopping-cart"></i> Comprar Creditos </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Solicitacao" asp-action="Index"><i class="fa fa-shopping-cart"></i> Solicitar Viagem </a>
+                    </li>
+                    <li>
+                        <a asp-controller="PagarPassagem" asp-action="Index"><i class="fa fa-edit"></i> Pagar Passagem </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /sidebar menu -->
+    </div>
+</div>

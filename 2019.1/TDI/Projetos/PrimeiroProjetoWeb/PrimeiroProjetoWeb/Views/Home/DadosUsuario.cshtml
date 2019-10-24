@@ -1,0 +1,23 @@
+﻿@model PrimeiroProjetoWeb.Models.Usuario
+@{
+    ViewData["Title"] = "DadosUsuario";
+}
+
+<h1>Dados do Usuario</h1>
+@if (Model == null)
+{
+    <h1>ID Invalido!!</h1>
+    
+    <h2>Insira o novo ID Abaixo:</h2>
+    <form>
+        Id:<input type="number" name="id" asp-controller="Home" asp-action="DadosUsuario"/>
+        <input type="submit" />
+    </form>
+}
+else
+{
+    <h3>Id: @Model.Id</h3>
+    <h3>Nome: @Model.Nome</h3>
+    <h3>Idade: @Model.Idade</h3>
+    <h3>Hora: @ViewBag.Hora</h3>
+}

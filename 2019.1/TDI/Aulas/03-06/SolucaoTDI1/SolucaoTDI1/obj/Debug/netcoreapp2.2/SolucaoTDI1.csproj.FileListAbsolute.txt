@@ -1,0 +1,11 @@
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\bin\Debug\netcoreapp2.2\SolucaoTDI1.deps.json
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\bin\Debug\netcoreapp2.2\SolucaoTDI1.runtimeconfig.json
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\bin\Debug\netcoreapp2.2\SolucaoTDI1.runtimeconfig.dev.json
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\bin\Debug\netcoreapp2.2\SolucaoTDI1.dll
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\bin\Debug\netcoreapp2.2\SolucaoTDI1.pdb
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\obj\Debug\netcoreapp2.2\SolucaoTDI1.csprojAssemblyReference.cache
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\obj\Debug\netcoreapp2.2\SolucaoTDI1.csproj.CoreCompileInputs.cache
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\obj\Debug\netcoreapp2.2\SolucaoTDI1.AssemblyInfoInputs.cache
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\obj\Debug\netcoreapp2.2\SolucaoTDI1.AssemblyInfo.cs
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\obj\Debug\netcoreapp2.2\SolucaoTDI1.dll
+D:\UFS\TDI\Aulas\03-06\SolucaoTDI1\SolucaoTDI1\obj\Debug\netcoreapp2.2\SolucaoTDI1.pdb

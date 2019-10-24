@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Model.ViewModel.MotoristaUsuarioViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="x_title">
+    <h2>Motoristas</h2>
+    <a class="btn btn-primary" style="float:right" asp-controller="Motorista" asp-action="Create">Adicionar Motorista</a>
+    <div class="clearfix"></div>
+</div>
+<div class="x_content">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Usuario.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Motorista.Categoria)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Motorista.Validade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Motorista.Cnh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Usuario.Telefone)
+                </th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usuario.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Motorista.Categoria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Motorista.Validade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Motorista.Cnh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usuario.Telefone)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Details", "Motorista", new { id = item.Motorista.Id })" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Detalhes </a>
+                        <a href="@Url.Action("Edit", "Motorista", new { id = item.Motorista.Id })" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                        <a href="@Url.Action("Delete", "Motorista", new { id = item.Motorista.Id })" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remover </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
